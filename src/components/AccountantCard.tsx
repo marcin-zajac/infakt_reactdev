@@ -9,11 +9,10 @@ interface AccountantCardProps {
   firstName: string
   lastName: string
   phone: string
-  price: number
 }
 
 const CardContainer = styled.div`
-  width: 252px;
+  width: 300px;
   display: flex;
   border: 1px solid ${({ theme }) => theme.colors.gray[200]};
   border-radius: 16px;
