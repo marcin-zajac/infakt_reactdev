@@ -1,7 +1,38 @@
-import styled, { CSSProperties } from 'styled-components'
+import styled from 'styled-components'
 
-export const BodyText = styled.p`
-  font-size: 16px;
-  color: #333333;
-  font-family: monospace;
+interface BodyProps {
+  size: 'S' | 'M' | 'L'
+  color?: 'gray'
+}
+
+const fontSizes: Record<BodyProps['size'], string> = {
+  S: '14px',
+  M: '16px',
+  L: '18px',
+}
+
+const lineHeights: Record<BodyProps['size'], string> = {
+  S: '20px',
+  M: '24px',
+  L: '28px',
+}
+
+const color: Record<BodyProps['size'], string> = {
+  S: '20px',
+  M: '24px',
+  L: '28px',
+}
+
+const BodyText = styled.div<BodyProps>`
+  opacity: 1;
+  color: ${({ color }) => color || 'black'};
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: center;
+  line-height: ${({ size }) => lineHeights[size]};
+  font-size: ${({ size }) => fontSizes[size]};
 `
+
+export default BodyText

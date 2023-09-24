@@ -1,5 +1,5 @@
-import { BodyText } from '../../components/BodyText'
+import BodyText from '../../components/BodyText'
 
 export const Accountants = () => {
-  return <BodyText style={{ color: 'red' }}>Accountants page component</BodyText>
+  return <BodyText size="M">Accountants page component</BodyText>
 }
