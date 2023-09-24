@@ -5,7 +5,7 @@ interface BodyProps {
   color?: 'primary' | 'secondary'
 }
 
-const Body = styled.text<BodyProps>`
+const Body = styled.span<BodyProps>`
   font-family: ${({ theme, variant }) => theme.typography[variant ?? 'bodyM'].fontFamily};
   font-size: ${({ theme, variant }) => theme.typography[variant ?? 'bodyM'].fontSize};
   line-height: ${({ theme, variant }) => theme.typography[variant ?? 'bodyM'].lineHeight};
@@ -17,7 +17,7 @@ interface SubtitleProps {
   variant?: 'subtitle1' | 'subtitle2'
 }
 
-const Subtitle = styled.text<SubtitleProps>`
+const Subtitle = styled.span<SubtitleProps>`
   font-family: ${({ theme, variant }) => theme.typography[variant ?? 'subtitle1'].fontFamily};
   font-size: ${({ theme, variant }) => theme.typography[variant ?? 'subtitle1'].fontSize};
   line-height: ${({ theme, variant }) => theme.typography[variant ?? 'subtitle1'].lineHeight};
@@ -25,7 +25,7 @@ const Subtitle = styled.text<SubtitleProps>`
   color: ${({ theme, color }) => theme.text[color ?? 'primary']};
 `
 
-const Disclaimer = styled.text<SubtitleProps>`
+const Disclaimer = styled.span<SubtitleProps>`
   font-family: ${({ theme }) => theme.typography.disclaimer.fontFamily};
   font-size: ${({ theme }) => theme.typography.disclaimer.fontSize};
   line-height: ${({ theme }) => theme.typography.disclaimer.lineHeight};
