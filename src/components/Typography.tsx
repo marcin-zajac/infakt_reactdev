@@ -5,7 +5,7 @@ interface BodyProps {
   color?: 'primary' | 'secondary'
 }
 
-const Body = styled.span<BodyProps>`
+const Body = styled.span.withConfig({shouldForwardProp: (prop) => !['variant', 'color'].includes(prop)})<BodyProps>`
   font-family: ${({ theme, variant }) => theme.typography[variant ?? 'bodyM'].fontFamily};
   font-size: ${({ theme, variant }) => theme.typography[variant ?? 'bodyM'].fontSize};
   line-height: ${({ theme, variant }) => theme.typography[variant ?? 'bodyM'].lineHeight};
@@ -17,7 +17,7 @@ interface SubtitleProps {
   variant?: 'subtitle1' | 'subtitle2'
 }
 
-const Subtitle = styled.span<SubtitleProps>`
+const Subtitle = styled.span.withConfig({shouldForwardProp: (prop) => !['variant'].includes(prop)})<SubtitleProps>`
   font-family: ${({ theme, variant }) => theme.typography[variant ?? 'subtitle1'].fontFamily};
   font-size: ${({ theme, variant }) => theme.typography[variant ?? 'subtitle1'].fontSize};
   line-height: ${({ theme, variant }) => theme.typography[variant ?? 'subtitle1'].lineHeight};
