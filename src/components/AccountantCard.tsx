@@ -3,12 +3,14 @@ import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { Body, Disclaimer, Subtitle } from './Typography'
 import { Button } from './Button'
+import { StringDecoder } from 'string_decoder'
 
 interface AccountantCardProps {
   avatar: string
   firstName: string
   lastName: string
   phone: string
+  email: string
 }
 
 const CardContainer = styled.div`
@@ -45,7 +47,13 @@ const Avatar = styled.img`
   border-radius: 8px;
   background-size: 100%;
 `
-const AccountantCard: React.FC<AccountantCardProps> = ({ avatar, firstName, lastName, phone }) => {
+const AccountantCard: React.FC<AccountantCardProps> = ({
+  avatar,
+  firstName,
+  lastName,
+  phone,
+  email,
+}) => {
   const { t } = useTranslation()
 
   return (
@@ -63,7 +71,7 @@ const AccountantCard: React.FC<AccountantCardProps> = ({ avatar, firstName, last
         {t('email')}
       </Body>
       <Body variant="bodyM">
-        <StyledHref href="mailto:mr.marcinzajac@outlook.com">mr.marcinzajac@outlook.com</StyledHref>
+        <StyledHref href={`mailto:${email}`}>{email}</StyledHref>
       </Body>
       <Body variant="bodyS" color="secondary" style={{ marginTop: '24px' }}>
         {t('phone')}
