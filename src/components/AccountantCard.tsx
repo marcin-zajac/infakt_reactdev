@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { Body, Disclaimer, Subtitle } from './Typography'
 import { Button } from './Button'
-import { StringDecoder } from 'string_decoder'
+import Amount from './Amount'
 
 interface AccountantCardProps {
   avatar: string
@@ -35,10 +35,6 @@ const DetailsWrapper = styled.div`
 
 const StyledHref = styled.a`
   color: ${({ theme }) => theme.text.primary};
-`
-
-const PriceWrapper = styled.div`
-  display: inline;
 `
 
 const Avatar = styled.img`
@@ -80,10 +76,7 @@ const AccountantCard: React.FC<AccountantCardProps> = ({
       <Body variant="bodyS" color="secondary" style={{ marginTop: '24px' }}>
         {t('average_net_price_of_service_per_month')}
       </Body>
-      <PriceWrapper>
-        <Body variant="bodyM">350.00</Body>
-        <Disclaimer style={{ marginLeft: '4px', color: 'black' }}>PLN</Disclaimer>
-      </PriceWrapper>
+      <Amount amount={350} currency="PLN" />
       <Button style={{ marginTop: '24px', border: 'none' }}> {t('find_out_more')}</Button>
     </CardContainer>
   )

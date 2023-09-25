@@ -14,36 +14,37 @@ const theme = {
   typography: {
     fontWeight: 400,
     headline1: {
+      fontFamily: 'Signika',
       fontSize: '72px',
       letterSpacing: -0.8,
       lineHeight: '80px',
     },
     headline2: {
-      fontFamily: 'Signika-Regular',
+      fontFamily: 'Signika',
       fontSize: '60px',
       letterSpacing: -0.4,
       lineHeight: '68px',
     },
     headline3: {
-      fontFamily: 'Signika-Regular',
+      fontFamily: 'Signika',
       fontSize: '48px',
       letterSpacing: -0.4,
       lineHeight: '56px',
     },
     headline4: {
-      fontFamily: 'Signika-Regular',
+      fontFamily: 'Signika',
       fontSize: '36px',
       letterSpacing: -0.8,
       lineHeight: '44px',
     },
     headline5: {
-      fontFamily: 'Signika-Regular',
+      fontFamily: 'Signika',
       fontSize: '24px',
       letterSpacing: -0.2,
       lineHeight: '28px',
     },
     headline6: {
-      fontFamily: 'Signika-Regular',
+      fontFamily: 'Signika',
       fontSize: '20px',
       letterSpacing: -0.8,
       lineHeight: '24px',
