@@ -11,7 +11,8 @@ npx create-react-app my-app --template typescript
 Makieta: https://www.sketch.com/s/b0736a6b-3a81-4863-95b6-4ec6775a20e3/a/dg1Gl5l
 (W boczym menu sketch w prawym górnym rogu w zakładce "Inspect" mamy możliwość podglądu właściwości elementów karty księgowego)
 
-![Alt text](image.png)
+![image](https://github.com/marcin-zajac/infakt_reactdev/assets/57039654/a18055a1-802d-4b04-9ed3-dc9a1c2c148c)
+
 
 Opis zadania:
 
