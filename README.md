@@ -1,46 +1,68 @@
-# Getting Started with Create React App
+## Zadanie testowe na pozycję React Developer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Cel: stworzenie widoku z kartami księgowych z możliwością doładowania kolejnych kart po wciśnięciu przycisku.
 
-## Available Scripts
+Dla wykonania zadania może być użyte dane repozytorium jako szablon, lub można użyć template create-react-app:
 
-In the project directory, you can run:
+```
+npx create-react-app my-app --template typescript
+```
 
-### `npm start`
+Makieta: https://www.sketch.com/s/b0736a6b-3a81-4863-95b6-4ec6775a20e3/a/dg1Gl5l
+(W boczym menu sketch w prawym górnym rogu w zakładce "Inspect" mamy możliwość podglądu właściwości elementów karty księgowego)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Alt text](image.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Opis zadania:
 
-### `npm test`
+Używając danych z dostarczonego publicznego API, stwórz widok wyświetlający listę księgowych.
+Karta księgowego powinna być stworzona według projektu z załączonego powyżej linku.
+Na dole, pod listą kart księgowych, powinien znajdować się przycisk pozwalający na załadowanie kolejnych kart z informacjami o księgowych
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Kryteria wykonania:
 
-### `npm run build`
+1. Zadanie wykonane w React z użyciem TypeScript
+2. Brak blędów w konsoli przeglądarki
+3. Repozytorium z zadaniem powinno się znajdować na github i mieć publiczny dostęp dla możliwości podglądu
+4. Projekt powinien zostać udostępniony online na jednej z platform wg. własnego uznania (np. github pages, netlify, vercel, etc.)
+5. Mile widziane jest użycie css in js (np. styled components).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Zadanie dodatkowe: umieszczenie widoku kart księgowych pod linkiem /ksiegowi używając React Router (czyli dodanie routingu)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Po wykonaniu zadania należy udostępnić link do repozytorium oraz link dla podglądu wykonanego zadania.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### API
 
-### `npm run eject`
+Link do API: https://randomuser.me/api/ (dokumentacja - https://randomuser.me/documentation)
+Używane parametry:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- seed
+- gender
+- page
+- results
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Przykładowy link: https://randomuser.me/api/?seed=abc&gender=female&page=1&results=5
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Dane z API wyświetlene w karcie księgowego:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+type AccountantType = {
+  cell: string; // numer telefonu
+  name: {
+    first: string;
+    last: string;
+  };
+  email: string;
+  picture: { thumbnail: string; medium: string };
+  login: {
+    uuid: string;
+  };
+};
+type AccountantResponseType = {
+  results: AccountantType[];
+  info: {
+    page: number;
+  };
+};
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
